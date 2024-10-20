@@ -12,13 +12,18 @@ jobs:
     steps:
       - checkout
       
-      # Install dependencies for Playwright
+      # Install Playwright NuGet package and tool
       - run:
-          name: Install Playwright
+          name: Install Playwright NuGet package
+          command: dotnet add package Microsoft.Playwright
+
+      # Install Playwright CLI tool (to download browsers)
+      - run:
+          name: Install Playwright CLI
           command: |
-            playwright install
             dotnet tool install --global Microsoft.Playwright.CLI
             export PATH="$PATH:/root/.dotnet/tools"
+            playwright install
 
       # Restore dependencies via NuGet
       - run:
