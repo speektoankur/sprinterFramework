@@ -3,7 +3,7 @@ version: 2.1
 executors:
   csharp-executor:
     docker:
-      - image: mcr.microsoft.com/dotnet/sdk:7.0 # Use a .NET SDK image with C# support
+      - image: mcr.microsoft.com/dotnet/sdk:8.0 # Use a .NET SDK image with C# support
     working_directory: ~/repo
 
 jobs:
