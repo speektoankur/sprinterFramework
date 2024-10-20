@@ -19,6 +19,8 @@ namespace RestSharpTests
         [TestMethod]
         [TestCategory("API")]
         [DataRow("Apple MacBook Pro 16", 2019, 1849.99, "Intel Core i9", "1 TB", "Patched New Product Name")]
+        [DataRow("Lenovo Yoga ", 2023, 2000.93, "Intel Core i12", "2 TB", "Toshiba Lap")]
+        [DataRow("Samsung Tab ", 2055, 0.93, "Intel Core i17", "4 TB", "Dell Inspiron")]
         public void Validate_PATCH_request_to_updateName(String productName, int year, double price, String cpuModel, String hardDiskSize, String newName)
         {   
             // Creating Product Entity
