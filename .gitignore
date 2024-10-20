@@ -1,0 +1,84 @@
+# Ignore Visual Studio temporary files, build results, and
+# build directories.
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]64/
+[Aa][Rr][Mm]/
+bin/
+obj/
+
+# Ignore Playwright specific folders
+playwright-report/
+playwright/.cache/
+
+# User-specific files
+.vscode/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code files
+.vscode/*
+
+# Rider and IntelliJ files
+.idea/
+
+# Mac files
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+
+# Log files
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Package directories
+node_modules/
+bower_components/
+
+# Dotnet build outputs
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+*.mdb
+
+# Playwright browser downloads
+playwright/.local-browsers/
+
+# Ignore JetBrains Rider files
+.idea/
+
+# Ignore Test Results
+TestResults/
+
+# Ignore Playwright driver output
+playwright/driver/
+
+# Ignore publish output
+publish/
+
+# Ignore coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore temporary files
+~$*
+*.tmp
+
+# Ignore Resharper files
+_ReSharper*/

@@ -1,0 +1,47 @@
+version: 2.1
+
+executors:
+  csharp-executor:
+    docker:
+      - image: mcr.microsoft.com/dotnet/sdk:7.0 # Use a .NET SDK image with C# support
+    working_directory: ~/repo
+
+jobs:
+  build-and-test:
+    executor: csharp-executor
+    steps:
+      - checkout
+      
+      # Install dependencies for Playwright
+      - run:
+          name: Install Playwright
+          command: |
+            dotnet tool install --global Microsoft.Playwright.CLI
+            export PATH="$PATH:/root/.dotnet/tools"
+            playwright install
+
+      # Restore dependencies via NuGet
+      - run:
+          name: Restore NuGet packages
+          command: dotnet restore
+
+      # Build the project
+      - run:
+          name: Build the project
+          command: dotnet build --no-restore --configuration Release
+
+      # Run Playwright tests
+      - run:
+          name: Run Playwright - UserInterface tests
+          command: dotnet test --filter "TestCategory=UI"
+
+      # Run RestSharp API tests
+      - run:
+          name: Run RestSharp - API tests
+          command: dotnet test --filter "TestCategory=API"
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build-and-test
