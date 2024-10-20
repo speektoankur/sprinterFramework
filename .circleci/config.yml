@@ -21,8 +21,8 @@ jobs:
       - run:
           name: Install Playwright CLI
           command: |
-            dotnet tool install --global Microsoft.Playwright.CLI
             export PATH="$PATH:/root/.dotnet/tools"
+            dotnet tool install --global Microsoft.Playwright.CLI
             playwright install
 
       # Restore dependencies via NuGet
