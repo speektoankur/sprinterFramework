@@ -21,8 +21,9 @@ jobs:
       - run:
           name: Install Playwright CLI
           command: |
-            export PATH="$PATH:/root/.dotnet/tools"
+            cd SprinterFramework
             dotnet tool install --global Microsoft.Playwright.CLI
+            export PATH="$PATH:/root/.dotnet/tools"
             playwright install
 
       # Restore dependencies via NuGet
